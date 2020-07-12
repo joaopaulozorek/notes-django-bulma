@@ -1,11 +1,55 @@
 .dark{
-	background: #1b262c;
+	background: #26282b;
 }
 
 .blue{
-	background: #0f4c75;
+	background: #254b62;
 	color:#fff;
 }
 .fullheight{
 	min-height: 100vh;
+}
+.is-fab {
+	position: fixed;
+	bottom: 15px;
+	right: 15px;
+}
+
+.has-shadow{
+	box-shadow:
+	0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+	0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+	0 12.5px 10px rgba(0, 0, 0, 0.06),
+	0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+	0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+	0 100px 80px rgba(0, 0, 0, 0.12)
+	;
+}
+
+.nav {
+	overflow: hidden;
+	background-color: #010101;
+	position: fixed; /* Set the navbar to fixed position */
+	top: 0; /* Position the navbar at the top of the page */
+	width: 100%; /* Full width */
+}
+.nav a {
+  float: left;
+  display: block;
+  color: #fff;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.is-title {
+	color: #fff;
+	font-size: 2rem;
+	font-weight: 600;
+	line-height: 1.125;
+}
+
+
+.main{
+	margin-top: 30px;
 }

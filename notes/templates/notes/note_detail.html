@@ -1,16 +1,49 @@
 {% extends 'notes/base.html' %}
 {% block content %}
-            
-		<section class="section">
-		<div class="columns is-centered">
-			<div class="column is-half">
-				<article class="tile is-child notification  blue">
-					<p class="title">{{ note.title }}</p>
-					<p>publicado em: {{ note.date }}</p>
-					<p class="subtitle">{{ note.text }} </p>
-				</article>
-			</div>
-		</div>
 
+<section class="section">
+
+	<div class="columns is-centered">
+		<div class="column is-half">
+			<nav class="level  is-mobile">
+				<div class="level-left">
+					<div class="level-item">
+						<a href="/" class="button is-dark is-large has-shadow">
+							<span class="icon">
+								<i class="fas fa-chevron-left"></i>
+							</span></a>
+						</div>
+					</div>
+
+					<div class="level-right">
+						<div class="level-item">
+							<a href="/" class="button is-dark is-large has-shadow">
+								<span class="icon">
+									<i class="fas fa-trash-alt"></i>
+								</span></a>
+
+							</div>
+						</div>
+
+					</nav>
+				</div>
+			</div>
+			<div class="columns is-centered">
+				<div class="column is-half">
+					<article class="tile is-child notification  blue">
+						<p class="is-title">{{ note.title }}</p>
+						<p>criado em: {{ note.date }}</p>
+						<p class="subtitle">{{ note.text }} </p>
+					</article>
+				</div>
+			</div>
 		</section>
-{% endblock %}
+		<div class="is-fab">
+		<a class="button is-dark is-large is-rounded has-shadow" href="{% url 'note_edit' pk=note.pk %}">
+			<span class="icon">
+				<i class="fas fa-edit"></i>
+			</span>
+			<span>Editar</span>
+		</a>
+	</div>
+		{% endblock %}

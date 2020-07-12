@@ -1,27 +1,41 @@
 {% extends 'notes/base.html' %}
+{% load static %}
 {% block content %}
-         <div class="hero is-black has-text-centered">
-		<div class="hero-body">
-			<div class="container">
-				<h1 class="title">
-					Notas do João
-				</h1>
-			</div>
-		</div>
-	</div>
-		<section class="section">
-		
-		{% for note in notes %}
-		<div class="columns is-centered">
-			<div class="column is-half">
-				<a href="{% url 'note_detail' pk=note.pk %}">
+
+
+
+<section class="section main">
+
+
+	{% for note in notes %}
+	<div class="columns is-centered">
+		<div class="column is-half">
+			<a href="{% url 'note_detail' pk=note.pk %}">
 				<article class="tile is-child notification  blue">
 					<p class="title">{{ note.title }}</p>
 					<p class="subtitle">{{ note.text| slice:"0:45" }}...</p>
 				</article>
-				</a>
-			</div>
+			</a>
 		</div>
-		{% endfor %}
-		</section>
+	</div>
+	{% endfor %}
+	<div class="is-fab ">
+		<a class="button is-dark is-large is-rounded has-shadow" href="{% url 'note_new' %}">
+			<span class="icon">
+				<i class="fas fa-plus"></i>
+			</span>
+			<span>Adic. Nota</span>
+		</a>
+	</div>
+</section>
+<div class="nav">
+
+	<a href="/">
+		<h1 class="is-title">
+			Notas
+		</h1>
+	</a>
+
+
+</div>
 {% endblock %}
