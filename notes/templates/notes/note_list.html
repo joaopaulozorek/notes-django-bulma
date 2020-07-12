@@ -1,0 +1,27 @@
+{% extends 'notes/base.html' %}
+{% block content %}
+         <section class="hero is-black has-text-centered">
+		<div class="hero-body">
+			<div class="container">
+				<h1 class="title">
+					Notas do João
+				</h1>
+			</div>
+		</div>
+	</section>
+		<section class="section">
+		
+		{% for note in notes %}
+		<div class="columns is-centered">
+			<div class="column is-half">
+				<a href="{% url 'note_detail' pk=note.pk %}">
+				<article class="tile is-child notification  blue">
+					<p class="title">{{ note.title }}</p>
+					<p class="subtitle">{{ note.text| slice:"0:45" }}...</p>
+				</article>
+				</a>
+			</div>
+		</div>
+		{% endfor %}
+		</section>
+{% endblock %}

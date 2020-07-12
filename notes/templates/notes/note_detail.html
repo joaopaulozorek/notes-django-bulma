@@ -1,0 +1,16 @@
+{% extends 'notes/base.html' %}
+{% block content %}
+            
+		<section class="section">
+		<div class="columns is-centered">
+			<div class="column is-half">
+				<article class="tile is-child notification  blue">
+					<p class="title">{{ note.title }}</p>
+					<p>publicado em: {{ note.date }}</p>
+					<p class="subtitle">{{ note.text }} </p>
+				</article>
+			</div>
+		</div>
+
+		</section>
+{% endblock %}
