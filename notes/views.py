@@ -4,7 +4,7 @@ from .forms import NoteForm
 from .models import Note
 
 
-def notes_list(request):
+def note_list(request):
 	notes = Note.objects.filter(date__lte=timezone.now()).order_by('date') 
 	return render(request, 'notes/note_list.html', {'notes': notes})
 
@@ -38,3 +38,8 @@ def note_edit(request, pk):
 	else:
 		form = NoteForm(instance=note)
 	return render(request, 'notes/note_edit.html', {'form': form})
+
+def note_remove(request, pk):
+	note = get_object_or_404(Note, pk=pk)
+	note.delete()
+	return redirect('note_list')

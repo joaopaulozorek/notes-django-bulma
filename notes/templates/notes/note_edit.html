@@ -1,9 +1,32 @@
 {% extends 'notes/base.html' %}
 
 {% block content %}
-    <h2>Nova Nota</h2>
-    <form method="POST" class="post-form">{% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="save btn btn-default">Salvar</button>
-    </form>
+
+<section class="section">
+	<div class="columns is-centered">
+		<div class="column is-half has-text-centered">
+			<article class="tile is-child notification  blue">
+				<h1 class="title">Nota</h1>
+				<form method="POST" class="post-form">{% csrf_token %}
+					<div class="field">
+						<label class="subtitle">Título:</label>
+						<div class="control">
+							<input class="input" name="title" type="text" placeholder="Text input">
+						</div>
+					</div>
+
+					<div class="field">
+						<label class="subtitle">Texto:</label>
+						<div class="control">
+							<textarea class="textarea" name="text" placeholder="Textarea"></textarea>
+						</div>
+					</div>
+
+					<button type="submit" class="button is-dark is-large is-rounded has-shadow">Salvar</button>
+					
+				</form>
+			</article>
+		</div>
+	</div>
+</section>
 {% endblock %}

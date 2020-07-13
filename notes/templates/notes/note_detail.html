@@ -17,7 +17,7 @@
 
 					<div class="level-right">
 						<div class="level-item">
-							<a href="/" class="button is-dark is-large has-shadow">
+							<a href="{% url 'note_remove' pk=note.pk %}" class="button is-dark is-large has-shadow">
 								<span class="icon">
 									<i class="fas fa-trash-alt"></i>
 								</span></a>
@@ -30,16 +30,16 @@
 			</div>
 			<div class="columns is-centered">
 				<div class="column is-half">
-					<article class="tile is-child notification  blue">
+					<article class="tile is-child notification blue has-shadow">
 						<p class="is-title">{{ note.title }}</p>
-						<p>criado em: {{ note.date }}</p>
 						<p class="subtitle">{{ note.text }} </p>
+						<p>Última alteração em: {{ note.date }}</p>
 					</article>
 				</div>
 			</div>
 		</section>
 		<div class="is-fab">
-		<a class="button is-dark is-large is-rounded has-shadow" href="{% url 'note_edit' pk=note.pk %}">
+		<a class="button is-info is-large is-rounded has-shadow" href="{% url 'note_edit' pk=note.pk %}">
 			<span class="icon">
 				<i class="fas fa-edit"></i>
 			</span>
